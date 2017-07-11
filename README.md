@@ -1,6 +1,7 @@
 # satoshi
-A funny app for sending satoshis to friends
+You have a list of your friends, you tap them to send them a satoshi (1 satoshi = 0.00000001 bitcoin).
 
+# 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
