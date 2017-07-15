@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Dimensions } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Constants } from 'expo';
-import Login from 'react-native-simple-login';
 import HomeScreen from './Home.js';
 import ProfileScreen from './Profile.js';
 

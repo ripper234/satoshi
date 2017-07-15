@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import Login from './components/Login/Login.js';
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -7,18 +8,17 @@ export default class HomeScreen extends React.Component {
         this.state = { text: null };
     }
 
+    onLogin = (nickname) => {
+        const password = 'TODO Password'
+        console.log(`Login: (${nickname}, ${password})`) // user credentials
+        this.props.navigation.navigate('Profile', { nickname: nickname })
+    }
+
     render() {
         return (
             <View>
                 <Text>Welcome to Satoshi</Text>
-                <TextInput
-                    style={{ height: 50, width: 140, padding: 15, borderColor: 'gray', borderWidth: 1 }}
-                    onChangeText={(text) => this.setState({ text })}
-                    placeholder='nickname'
-                    value={this.state.text}
-                />
-                <Button title="login"
-                    onPress={() => this.props.navigation.navigate('Profile', { nickname: 'Lucy' })} />
+                <Login onLogin={this.onLogin} />
             </View>
         );
     }
