@@ -11,7 +11,15 @@ export default class HomeScreen extends React.Component {
     onLogin = (nickname) => {
         const password = 'TODO Password'
         console.log(`Login: (${nickname}, ${password})`) // user credentials
-        this.props.navigation.navigate('Profile', { nickname: nickname })
+        switch (nickname) {
+            case 'ron':
+            case 'sharon':
+                this.props.navigation.navigate('Profile', { nickname: nickname })
+                return;
+        }
+
+        console.log('Username does not exist');
+        // TODO Display Error
     }
 
     render() {
