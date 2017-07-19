@@ -27,7 +27,8 @@ export default class HomeScreen extends React.Component {
             })
         })
 
-        switch (response.json().status) {
+        let json = await response.json();
+        switch (json.status) {
             case 'STATUS_OK':
                 this.props.navigation.navigate('Profile', { nickname: nickname })
                 return;
