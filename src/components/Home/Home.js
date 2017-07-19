@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
-import Login from './components/Login/Login.js';
+import Login from '../Login/Login.js';
+import {localAddress} from '../../config.js'
+console.log('localAddress: ', localAddress);
 
-// TODO Use prod server in prod mode 
-const server = 'https://satoshi-api.herokuapp.com'
-// const server = 'http://localhost:8080'
+// TODO Use prod server in prod mode
+// const server = 'https://satoshi-api.herokuapp.com'
+const server = `http://${localAddress}:8080`
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -14,21 +16,17 @@ export default class HomeScreen extends React.Component {
 
     onLogin = async (nickname) => {
         const deviceId = 'TODO DeviceID'
-        console.log(`Login: (${nickname}, ${deviceId})`) // user credentials
-        let response = await fetch(`${server}/api/login`, {
+        // console.log(`Login: (${nickname}, ${deviceId})`) // user credentials
+        const request = await fetch(`${server}/api/login`, {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
             body: JSON.stringify({
                 nickname: nickname,
                 deviceId: deviceId,
             })
         })
 
-        let json = await response.json();
-        switch (json.status) {
+        const response = await request.json()
+        switch (response.status) {
             case 'STATUS_OK':
                 this.props.navigation.navigate('Profile', { nickname: nickname })
                 return;
