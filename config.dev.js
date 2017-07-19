@@ -1,4 +1,4 @@
-const localAddress = '172.13.3.70' // Local ip
+const localAddress = '172.13.2.1' // Local ip
 
 
-export {localAddress}
+export { localAddress }
