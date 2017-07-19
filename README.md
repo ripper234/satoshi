@@ -8,10 +8,12 @@ Satoshi. It's that simple.
 This is the client repo, see also [React Native's Readme](REACT_NATIVE.md).
 It talks to the [Satoshi server](https://github.com/ripper234/satoshi-api).
 
-To get started, do 
+To get started, do
 
 ```
 (setup Satoshi Server first)
 npm install
 npm start
 ```
+
+In order to run the app locally, replace `localAddress`(in `/config.dev.js`) with your local IP.
