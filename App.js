@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Dimensions } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Constants } from 'expo';
-import HomeScreen from './Home.js';
-import ProfileScreen from './Profile.js';
+import HomeScreen from './src/components/Home/Home.js';
+import ProfileScreen from './src/components/Profile/Profile.js';
 
 const MainNavigator = StackNavigator({
   Home: { screen: HomeScreen },
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     paddingTop: Constants.statusBarHeight,
   },
-}); 
+});
