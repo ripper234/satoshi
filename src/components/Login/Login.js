@@ -21,6 +21,7 @@ export default class Login extends React.Component {
                 />
                 <Button title="login"
                     onPress={() => this.props.onLogin(this.state.nickname)} />
+                {this.props.errorShown && <Text style={{ color: 'red' }}>Error</Text>}
             </View>
         );
     }

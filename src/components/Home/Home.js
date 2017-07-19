@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import Login from '../Login/Login.js';
-import {localAddress} from '../../config.js'
+import { localAddress } from '../../../config.dev.js'
 console.log('localAddress: ', localAddress);
 
 // TODO Use prod server in prod mode
@@ -15,6 +15,8 @@ export default class HomeScreen extends React.Component {
     }
 
     onLogin = async (nickname) => {
+        this.setState({ errorShown: false })
+
         const deviceId = 'TODO DeviceID'
         // console.log(`Login: (${nickname}, ${deviceId})`) // user credentials
         const request = await fetch(`${server}/api/login`, {
@@ -33,6 +35,7 @@ export default class HomeScreen extends React.Component {
         }
 
         console.log('Username does not exist');
+        this.setState({ errorShown: true })
         // TODO Display Error
     }
 
@@ -40,7 +43,7 @@ export default class HomeScreen extends React.Component {
         return (
             <View>
                 <Text>Welcome to Satoshi</Text>
-                <Login onLogin={this.onLogin} />
+                <Login onLogin={this.onLogin.bind(this)} errorShown={this.state.errorShown} />
             </View>
         );
     }
