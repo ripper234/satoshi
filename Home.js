@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import Login from './components/Login/Login.js';
 
 // TODO Use prod server in prod mode 
-// const server = 'https://satoshi-api.herokuapp.com'
-const server = 'http://localhost:8080'
+const server = 'https://satoshi-api.herokuapp.com'
+// const server = 'http://localhost:8080'
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
